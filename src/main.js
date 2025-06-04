@@ -5,6 +5,7 @@ import App from './App.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import { routes } from 'vue-router/auto-routes';
 import { createHead } from '@unhead/vue/client';
+ import { setupLayouts } from 'virtual:generated-layouts'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -48,7 +49,8 @@ const i18n = createI18n({
         download: 'Download',
         desc: 'You can download Forte from here...',
         oldVersion: 'Looking for an older release?',
-        oldVersionDesc: 'Looking for files from an older release? Older versions can be found at SourceForge!'
+        oldVersionDesc: 'Looking for files from an older release? Older versions can be found at SourceForge!',
+        gosf: 'Go SourceForge'
       },
       nav: {
         language: 'Language',
@@ -57,6 +59,11 @@ const i18n = createI18n({
       },
       footer: {
         linuxTrade: 'Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.'
+      },
+      notFound: {
+        title: 'Not Found :(',
+        desc: "I see you've lost your way, but don't worry, we have a link to get back :)",
+        button: 'Return to Home'
       }
     },
     ja: {
@@ -91,7 +98,8 @@ const i18n = createI18n({
         download: 'ダウンロード',
         desc: 'Forteはここからダウンロードできます...',
         oldVersion: '古いリリースを探していますか？',
-        oldVersionDesc: '古いリリースを探していますか？古いバージョンはSourceForgeで見つけることができます！'
+        oldVersionDesc: '古いリリースを探していますか？古いバージョンはSourceForgeで見つけることができます！',
+        gosf: 'SourceForgeへ'
       },
       nav: {
         language: '言語',
@@ -100,6 +108,11 @@ const i18n = createI18n({
       },
       footer: {
         linuxTrade: 'Linux® は、米国およびその他の国におけるLinus Torvaldsの登録商標です。 '
+      },
+      notFound: {
+        title: 'お探しのページが見つかりませんでした :(',
+        desc: "道に迷ってしまったようですが、ご安心ください。ホームに戻るためのボタンがここにあります :)",
+        button: 'ホームに戻る'
       }
     }
   }

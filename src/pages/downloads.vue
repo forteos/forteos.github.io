@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { KdePlasmaIcon } from '@mkody/vue3-simple-icons';
 import { useHead } from '@unhead/vue'
+import { IconDownload } from '@tabler/icons-vue'
 
 const editionList = {
   version: '25.06',
@@ -78,7 +79,7 @@ useHead({
               <img :src="edition.screenshot" width="337" />
               <h3 class="text-lg font-bold">Forte {{ editionList.version }} ({{ edition.name }})</h3>              
             </div>
-            <Button size="lg" class="bg-slate-900 hover:bg-slate-500 ">{{ $t('downloads.download') }}</Button>
+            <Button size="lg" class="bg-slate-900 hover:bg-slate-500 "><IconDownload class="w-4 h-4 mr-1" />{{ $t('downloads.download') }}</Button>
           </div>
         </div>
       </div>
@@ -90,12 +91,13 @@ useHead({
               <img :src="edition.screenshot" width="337" />
               <h3 class="text-lg font-bold">Forte {{ editionList.x86Version }} x86 ({{ edition.name }})</h3>              
             </div>
-            <Button size="lg" class="bg-slate-900 hover:bg-slate-500 ">{{ $t('downloads.download') }}</Button>
+            <Button size="lg" class="bg-slate-900 hover:bg-slate-500 "><IconDownload class="w-4 h-4 mr-1" />{{ $t('downloads.download') }}</Button>
           </div>
         </div>
       </div>
       <h2 class="text-4xl font-bold mb-5">{{ $t('downloads.oldVersion') }}</h2>
       <p>{{ $t('downloads.oldVersionDesc') }}</p>
+      <a href="https://sourceforge.net/projects/forteos/files/" class="text-blue-500 hover:text-blue-600" target="_blank" rel="noopener noreferer">{{ $t('downloads.gosf') }}</a>
     </div>
   </div>
 </template>
