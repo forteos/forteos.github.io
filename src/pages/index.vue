@@ -85,7 +85,7 @@ useHead({
     <div class="bg-white p-3 w-full" id="screenshot">
       <h2 class="text-4xl font-bold mb-5">{{ $t('index.screenshot') }}</h2>
       <div class="grid grid-cols-2 md:grid-cols-1 gap-2 w-2/5 mx-auto">
-        <img src="../assets/forte-xfce.png" width="450" />
+        <img src="../assets/images/forte-xfce.png" width="450" />
       </div>
     </div>
   </div>

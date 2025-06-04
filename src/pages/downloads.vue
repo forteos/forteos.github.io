@@ -4,25 +4,29 @@ import { KdePlasmaIcon } from '@mkody/vue3-simple-icons';
 import { useHead } from '@unhead/vue'
 import { IconDownload } from '@tabler/icons-vue'
 
+const getImagePath = (image) => {
+  return new URL(`@/assets/images/${image}`, import.meta.url).href;
+};
+
 const editionList = {
   version: '25.06',
   x86Version: '25.06',
   amd64:[
     {
       name: 'Plasma',
-      screenshot: 'src/assets/forte-xfce.png',
+      screenshot: 'forte-xfce.png',
       dl: null
     },
     {
       name: 'Xfce',
-      screenshot: 'src/assets/forte-xfce.png',
+      screenshot: 'forte-xfce.png',
       dl: null
     }
   ],
   i186:[
     {
       name: 'Xfce',
-      screenshot: 'src/assets/forte-xfce.png',
+      screenshot: 'forte-xfce.png',
       dl: null
     }
   ]
@@ -76,7 +80,7 @@ useHead({
         <div class="flex gap-5 justify-center items-center">
           <div class="flex flex-col gap-2 bg-gray-100 p-5 text-center rounded-lg" v-for="edition in editionList.amd64">
             <div>
-              <img :src="edition.screenshot" width="337" />
+              <img :src="getImagePath(edition.screenshot)" width="337" />
               <h3 class="text-lg font-bold">Forte {{ editionList.version }} ({{ edition.name }})</h3>              
             </div>
             <Button size="lg" class="bg-slate-900 hover:bg-slate-500 "><IconDownload class="w-4 h-4 mr-1" />{{ $t('downloads.download') }}</Button>
@@ -88,7 +92,7 @@ useHead({
         <div class="flex gap-5 justify-center items-center">
           <div class="flex flex-col gap-2 bg-gray-100 p-5 text-center rounded-lg" v-for="edition in editionList.i186">
             <div>
-              <img :src="edition.screenshot" width="337" />
+              <img :src="getImagePath(edition.screenshot)" width="337" />
               <h3 class="text-lg font-bold">Forte {{ editionList.x86Version }} x86 ({{ edition.name }})</h3>              
             </div>
             <Button size="lg" class="bg-slate-900 hover:bg-slate-500 "><IconDownload class="w-4 h-4 mr-1" />{{ $t('downloads.download') }}</Button>
